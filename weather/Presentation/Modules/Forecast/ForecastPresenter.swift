@@ -29,7 +29,9 @@ class ForecastPresenter: ForecastViewOutput {
     }
     
     func takeWeather(by coordinate: CLLocationCoordinate2D) {
-        service.getWeatherForecast(by: coordinate) { (weatherArray, error) in
+        service.getWeatherForecast(by: coordinate) { [weak self] (weatherArray, error) in
+            guard let self = self else { return }
+            
             if let array = weatherArray {
                 self.twoDementionArray = self.makeTwoDementionArray(from: array)
                 self.view.reload(with: self.twoDementionArray)
