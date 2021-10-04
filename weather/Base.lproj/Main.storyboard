@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FBX-vk-ia2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FBX-vk-ia2">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -26,7 +26,7 @@
             </objects>
             <point key="canvasLocation" x="-2098" y="349"/>
         </scene>
-        <!--Forecast View Controller-->
+        <!--Forecast-->
         <scene sceneID="7Nj-lX-48O">
             <objects>
                 <viewController id="bBf-cl-fnl" customClass="ForecastViewController" customModule="weather" customModuleProvider="target" sceneMemberID="viewController">
@@ -83,7 +83,7 @@
                             <constraint firstItem="WbQ-Uo-ikT" firstAttribute="trailing" secondItem="OBF-RV-5Pg" secondAttribute="trailing" id="saV-LF-Jtq"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="more" id="ZT5-lN-qEr"/>
+                    <tabBarItem key="tabBarItem" title="Forecast" image="list.dash" catalog="system" id="ZT5-lN-qEr"/>
                     <connections>
                         <outlet property="activityIndicatorView" destination="NhO-3W-Dwg" id="re1-bl-SkK"/>
                         <outlet property="reconnectButton" destination="PD6-cS-qCa" id="lwW-sf-2rx"/>
@@ -94,7 +94,7 @@
             </objects>
             <point key="canvasLocation" x="-483" y="-48"/>
         </scene>
-        <!--Current Weather View Controller-->
+        <!--Weather-->
         <scene sceneID="PU5-WA-9Kj">
             <objects>
                 <viewController id="gCy-pC-kde" customClass="CurrentWeatherViewController" customModule="weather" customModuleProvider="target" sceneMemberID="viewController">
@@ -399,10 +399,11 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Gc-1S-l0X" userLabel="ActivityIndicatorView" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
-                                <rect key="frame" x="85.666666666666671" y="312.66666666666669" width="218.66666666666663" height="218.66666666666669"/>
+                                <rect key="frame" x="120" y="347" width="150" height="150"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="7Gc-1S-l0X" secondAttribute="height" id="u0T-PN-gaY"/>
+                                    <constraint firstAttribute="width" secondItem="7Gc-1S-l0X" secondAttribute="height" id="J9H-Bg-DYM"/>
+                                    <constraint firstAttribute="height" constant="150" id="P2z-fb-3E6"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rjf-rT-5FG" userLabel="Reconnect" customClass="RoundedButton" customModule="weather" customModuleProvider="target">
@@ -424,7 +425,6 @@
                         <viewLayoutGuide key="safeArea" id="XI7-6I-P4T"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="7Gc-1S-l0X" firstAttribute="width" secondItem="IgO-DC-LmB" secondAttribute="width" multiplier="0.560748" id="1Bk-Lf-k9h"/>
                             <constraint firstItem="rjf-rT-5FG" firstAttribute="centerX" secondItem="IgO-DC-LmB" secondAttribute="centerX" id="1hs-vu-uQN"/>
                             <constraint firstItem="7Gc-1S-l0X" firstAttribute="centerX" secondItem="IgO-DC-LmB" secondAttribute="centerX" id="66u-P0-Bhf"/>
                             <constraint firstItem="wIc-1A-gQB" firstAttribute="trailing" secondItem="XI7-6I-P4T" secondAttribute="trailing" id="Bsb-jz-nzA"/>
@@ -435,7 +435,7 @@
                             <constraint firstItem="wIc-1A-gQB" firstAttribute="top" secondItem="XI7-6I-P4T" secondAttribute="top" id="w2z-PG-oIy"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="j4C-rz-NAG"/>
+                    <tabBarItem key="tabBarItem" title="Weather" image="sun.max.fill" catalog="system" id="j4C-rz-NAG"/>
                     <connections>
                         <outlet property="activityIndicatorView" destination="7Gc-1S-l0X" id="Lqv-8k-fD0"/>
                         <outlet property="cityNameLabel" destination="W7c-Ju-rKh" id="6ak-tt-Ri9"/>
@@ -464,6 +464,8 @@
         <image name="icons8-влажность-80" width="80" height="80"/>
         <image name="icons8-град-64" width="64" height="64"/>
         <image name="icons8-облака-128" width="128" height="128"/>
+        <image name="list.dash" catalog="system" width="128" height="85"/>
+        <image name="sun.max.fill" catalog="system" width="128" height="124"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
